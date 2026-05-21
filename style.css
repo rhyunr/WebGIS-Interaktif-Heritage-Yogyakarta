@@ -1,0 +1,1173 @@
+/* =============================================
+   WebGIS Heritage Yogyakarta
+   Tema: Coklat Tua & Hitam - Nuansa Keraton
+   Font: Arial (Web Standard)
+   ============================================= */
+
+:root {
+  --coklat-tua: #3B1F0A;
+  --coklat-gelap: #2A1505;
+  --coklat-medium: #5C3317;
+  --coklat-muda: #8B5E3C;
+  --coklat-accent: #C8894A;
+  --emas: #D4A017;
+  --emas-muda: #F0C040;
+  --hitam: #0D0D0D;
+  --hitam-panel: #1A1209;
+  --hitam-card: #1E140A;
+  --putih: #F5ECD7;
+  --putih-redup: #C9B99A;
+  --abu: #6B5B4E;
+  --merah-accent: #8B2020;
+  --sidebar-width: 380px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+  background: var(--hitam);
+  color: var(--putih);
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---- HEADER ---- */
+#header {
+  background: var(--coklat-gelap);
+  border-bottom: 2px solid var(--emas);
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  box-shadow: 0 2px 15px rgba(212, 160, 23, 0.2);
+  height: 60px;
+}
+
+#header .logo-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#header .logo-icon {
+  font-size: 28px;
+  filter: drop-shadow(0 0 6px var(--emas));
+}
+
+#header h1 {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--emas);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+#header h1 span {
+  color: var(--putih-redup);
+  font-weight: normal;
+  font-size: 13px;
+  display: block;
+  letter-spacing: 2px;
+}
+.header-nav{
+
+  display:flex;
+
+  gap:8px;
+}
+.btn-mode {
+  background: var(--coklat-medium);
+  border: 1px solid var(--emas);
+  color: var(--putih);
+  padding: 6px 14px;
+  cursor: pointer;
+  font-size: 12px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border-radius: 3px;
+  transition: all 0.2s;
+  letter-spacing: 0.5px;
+}
+
+.btn-mode:hover, .btn-mode.active {
+  background: var(--emas);
+  color: var(--hitam);
+  font-weight: bold;
+}
+
+/* ---- LAYOUT UTAMA ---- */
+#main-container{
+  position:relative;
+  flex:1;
+  overflow:hidden;
+  display:flex;
+}
+
+/* ---- SIDEBAR ---- */
+
+#sidebar{
+
+  position:fixed;
+
+  top:74px;
+
+  left:0;
+
+  bottom:24px;
+
+  width:340px;
+
+  background:
+  rgba(18,8,2,.95);
+
+  backdrop-filter:blur(16px);
+
+  border:
+  1px solid rgba(212,160,23,.18);
+
+  overflow:hidden;
+
+  z-index:999;
+
+  display:flex;
+
+  flex-direction:column;
+
+  transition:.3s;
+
+}
+#sidebar-header {
+  background: var(--coklat-tua);
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--coklat-medium);
+}
+
+#sidebar-header h2 {
+  font-size: 13px;
+  color: var(--emas);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+}
+
+/* ---- TABS ---- */
+.tab-bar {
+  display: flex;
+  background: var(--coklat-gelap);
+  border-bottom: 1px solid var(--coklat-medium);
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 9px 4px;
+  background: none;
+  border: none;
+  color: var(--putih-redup);
+  cursor: pointer;
+  font-size: 11px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  transition: all 0.2s;
+  border-bottom: 2px solid transparent;
+  text-align: center;
+}
+
+.tab-btn:hover {
+  background: var(--coklat-medium);
+  color: var(--putih);
+}
+
+.tab-btn.active {
+  color: var(--emas);
+  border-bottom-color: var(--emas);
+  background: var(--hitam-panel);
+}
+
+/* ---- PANEL KONTEN ---- */
+.tab-panel {
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  flex: 1;
+}
+
+.tab-panel.active {
+  display: flex;
+}
+
+/* ---- FILTER KATEGORI ---- */
+#filter-bar {
+  padding: 10px 12px;
+  background: var(--hitam-card);
+  border-bottom: 1px solid var(--coklat-medium);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.filter-btn {
+  padding: 4px 10px;
+  border: 1px solid var(--coklat-muda);
+  background: transparent;
+  color: var(--putih-redup);
+  cursor: pointer;
+  font-size: 11px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+
+.filter-btn:hover {
+  background: var(--coklat-medium);
+  color: var(--putih);
+}
+
+.filter-btn.active {
+  background: var(--coklat-accent);
+  border-color: var(--emas);
+  color: var(--hitam);
+  font-weight: bold;
+}
+
+/* ---- DAFTAR BANGUNAN ---- */
+#building-list {
+  overflow-y: auto;
+  flex: 1;
+}
+
+#building-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+#building-list::-webkit-scrollbar-track {
+  background: var(--hitam-panel);
+}
+
+#building-list::-webkit-scrollbar-thumb {
+  background: var(--coklat-medium);
+}
+
+.building-item {
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(92, 51, 23, 0.3);
+  cursor: pointer;
+  transition: all 0.15s;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.building-item:hover {
+  background: var(--coklat-tua);
+  border-left: 3px solid var(--emas);
+  padding-left: 11px;
+}
+
+.building-item.selected {
+  background: var(--coklat-medium);
+  border-left: 3px solid var(--emas-muda);
+}
+
+.building-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.building-info h3 {
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--putih);
+  margin-bottom: 2px;
+  line-height: 1.3;
+}
+
+.building-info .kategori-tag {
+  font-size: 10px;
+  color: var(--coklat-accent);
+  letter-spacing: 0.5px;
+}
+
+.building-info .tahun {
+  font-size: 10px;
+  color: var(--abu);
+  margin-top: 1px;
+}
+
+/* ---- PANEL RUTE ---- */
+#route-panel {
+  padding: 12px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.route-section {
+  margin-bottom: 14px;
+}
+
+.route-section label {
+  display: block;
+  font-size: 11px;
+  color: var(--coklat-accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.route-section select,
+.route-section input {
+  width: 100%;
+  padding: 8px 10px;
+  background: var(--coklat-tua);
+  border: 1px solid var(--coklat-medium);
+  color: var(--putih);
+  font-size: 12px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  outline: none;
+  cursor: pointer;
+}
+
+.route-section select:focus,
+.route-section input:focus {
+  border-color: var(--emas);
+}
+
+.btn-route {
+  width: 100%;
+  padding: 10px;
+  background: var(--coklat-accent);
+  border: 1px solid var(--emas);
+  color: var(--hitam);
+  font-size: 13px;
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: all 0.2s;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.btn-route:hover {
+  background: var(--emas);
+  box-shadow: 0 0 10px rgba(212, 160, 23, 0.4);
+}
+
+.btn-route.secondary {
+  background: transparent;
+  border: 1px solid var(--coklat-medium);
+  color: var(--putih-redup);
+  font-size: 11px;
+}
+
+#route-result {
+  background: var(--hitam-card);
+  border: 1px solid var(--coklat-medium);
+  padding: 10px;
+  font-size: 12px;
+  min-height: 60px;
+  color: var(--putih-redup);
+  line-height: 1.6;
+}
+
+#route-result .result-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  border-bottom: 1px solid rgba(92, 51, 23, 0.3);
+}
+
+#route-result .result-item:last-child {
+  border-bottom: none;
+}
+
+#route-result .result-label {
+  color: var(--coklat-accent);
+}
+
+#route-result .result-value {
+  color: var(--emas);
+  font-weight: bold;
+}
+
+/* ---- PANEL INFO BANGUNAN ---- */
+#info-panel {
+  padding: 12px;
+  overflow-y: auto;
+  flex: 1;
+  display: none;
+}
+
+#info-panel.visible {
+  display: block;
+}
+
+#info-panel .info-placeholder {
+  text-align: center;
+  color: var(--abu);
+  font-size: 12px;
+  margin-top: 40px;
+  line-height: 1.8;
+}
+
+#info-panel .info-placeholder span {
+  font-size: 30px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.info-image-container {
+  width: 100%;
+  height: 160px;
+  background: var(--coklat-gelap);
+  border: 1px solid var(--coklat-medium);
+  margin-bottom: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.info-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.info-image-placeholder {
+  font-size: 50px;
+  opacity: 0.4;
+}
+
+.info-nama {
+  font-size: 15px;
+  font-weight: bold;
+  color: var(--emas);
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.info-kategori {
+  font-size: 11px;
+  color: var(--coklat-accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+  margin-bottom: 12px;
+}
+
+.info-table td {
+  padding: 5px 8px;
+  border-bottom: 1px solid rgba(92, 51, 23, 0.3);
+  vertical-align: top;
+}
+
+.info-table td:first-child {
+  color: var(--putih-redup);
+  width: 80px;
+  font-weight: bold;
+}
+
+.info-table td:last-child {
+  color: var(--putih);
+}
+
+.info-deskripsi {
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--putih-redup);
+  background: var(--hitam-card);
+  padding: 10px;
+  border-left: 3px solid var(--coklat-accent);
+  border: 1px solid rgba(92, 51, 23, 0.4);
+}
+
+.btn-fokus {
+  width: 100%;
+  margin-top: 10px;
+  padding: 8px;
+  background: transparent;
+  border: 1px solid var(--coklat-accent);
+  color: var(--coklat-accent);
+  font-size: 11px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-fokus:hover {
+  background: var(--coklat-accent);
+  color: var(--hitam);
+}
+
+/* ---- MAP AREA ---- */
+#map-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+  display: flex;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+
+/* ---- CESIUM VIEWER ---- */
+#cesium-container{
+  position:fixed;
+  inset:0;
+
+  width:100%;
+  height:100%;
+
+  z-index:1;
+
+  display:none;
+
+  overflow:hidden;
+}
+
+#cesiumViewer {
+  width: 100%;
+  height: 100%;
+}
+
+/* ---- MAP CONTROLS OVERLAY ---- */
+#map-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 15px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.map-ctrl-btn {
+  width: 38px;
+  height: 38px;
+  background: var(--coklat-tua);
+  border: 1px solid var(--emas);
+  color: var(--putih);
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.map-ctrl-btn:hover {
+  background: var(--emas);
+  color: var(--hitam);
+}
+
+/* ---- LEAFLET POPUP CUSTOM ---- */
+.leaflet-popup-content-wrapper {
+  background: var(--hitam-card) !important;
+  border: 1px solid var(--emas) !important;
+  border-radius: 0 !important;
+  color: var(--putih) !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5) !important;
+}
+
+.leaflet-popup-tip {
+  background: var(--emas) !important;
+}
+
+.leaflet-popup-content {
+  margin: 10px 14px !important;
+  font-family: Arial, sans-serif !important;
+  font-size: 12px !important;
+}
+
+.popup-title {
+  font-weight: bold;
+  color: var(--emas);
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.popup-kat {
+  color: var(--coklat-accent);
+  font-size: 11px;
+  margin-bottom: 6px;
+}
+
+.popup-desc {
+  color: var(--putih-redup);
+  line-height: 1.5;
+  font-size: 11px;
+}
+
+/* ---- STATUS BAR ---- */
+#statusbar {
+  height: 24px;
+  background: var(--coklat-gelap);
+  border-top: 1px solid var(--coklat-medium);
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  gap: 20px;
+  font-size: 11px;
+  color: var(--abu);
+  z-index: 100;
+}
+
+#statusbar .status-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+#statusbar .status-item span.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--emas);
+  display: inline-block;
+}
+
+/* ---- CUSTOM MARKER ---- */
+.custom-marker {
+  background: var(--coklat-tua);
+  border: 2px solid var(--emas);
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.custom-marker:hover {
+  background: var(--emas);
+  border-color: var(--emas-muda);
+}
+
+.custom-marker span {
+  transform: rotate(45deg);
+  font-size: 13px;
+}
+
+.marker-keraton { border-color: #D4A017; }
+.marker-kolonial { border-color: #C0C0C0; }
+.marker-pelestarian { border-color: #8B4513; }
+.marker-religi { border-color: #006400; }
+.marker-modern { border-color: #4169E1; }
+
+/* ---- LEGEND ---- */
+#legend {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 999;
+  background: var(--hitam-card);
+  border: 1px solid var(--coklat-medium);
+  padding: 10px 12px;
+  min-width: 160px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+#legend h4 {
+  font-size: 10px;
+  color: var(--emas);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--coklat-medium);
+  padding-bottom: 5px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 5px;
+  font-size: 11px;
+  color: var(--putih-redup);
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ---- LOADING ---- */
+#loading-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--hitam);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s;
+}
+
+#loading-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loading-logo {
+  font-size: 60px;
+  margin-bottom: 20px;
+  animation: pulse 1.5s infinite;
+}
+
+.loading-title {
+  font-size: 22px;
+  color: var(--emas);
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.loading-subtitle {
+  font-size: 13px;
+  color: var(--putih-redup);
+  letter-spacing: 2px;
+}
+
+.loading-bar {
+  width: 200px;
+  height: 3px;
+  background: var(--coklat-medium);
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.loading-progress {
+  height: 100%;
+  background: var(--emas);
+  animation: loading 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.1); }
+}
+
+@keyframes loading {
+  0% { width: 0; margin-left: 0; }
+  50% { width: 70%; margin-left: 0; }
+  100% { width: 0; margin-left: 100%; }
+}
+
+/* Scrollbar global */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: var(--hitam); }
+::-webkit-scrollbar-thumb { background: var(--coklat-medium); }
+
+/* Leaflet tile dark override */
+.leaflet-tile-pane { filter: brightness(0.8) contrast(1.1); }
+/* =====================================
+LANDING PAGE FINAL FIX
+===================================== */
+/* ---- LANDING PAGE (Optional) ---- */
+.landing-page {
+  text-align: center;
+  margin-bottom: 60px;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  overflow-y: auto;
+}
+
+.landing-content {
+  text-align: center;
+  margin-bottom: 60px;
+  max-width: 900px;
+}
+
+
+.landing-small{
+
+  color:#8B6B2E;
+
+  font-size:13px;
+
+  letter-spacing:5px;
+
+  margin-bottom:25px;
+}
+
+.landing-title{
+
+font-size:64px;
+
+  color:#D4A017;
+
+  font-weight:bold;
+
+  line-height:1.1;
+
+  margin-bottom:25px;
+}
+
+.landing-sub{
+
+  color:#8B6B2E;
+
+  font-size:22px;
+
+  margin-bottom:45px;
+}
+
+/* BUTTON */
+
+.explore-btn{
+
+  background:transparent;
+
+  border:1px solid #D4A017;
+
+  color:#D4A017;
+
+  padding:18px 65px;
+
+  border-radius:999px;
+
+  cursor:pointer;
+
+  font-size:17px;
+
+  letter-spacing:3px;
+
+  transition:.3s;
+}
+
+.explore-btn:hover{
+
+  background:#D4A017;
+
+  color:black;
+
+  box-shadow:
+  0 0 30px rgba(212,160,23,.4);
+}
+
+/* GALLERY */
+
+.landing-gallery{
+
+  width:100%;
+
+  max-width:1400px;
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(260px,1fr));
+
+  gap:20px;
+}
+
+.gallery-item{
+
+  position:relative;
+
+  height:240px;
+
+  overflow:hidden;
+
+  border:1px solid #3B1F0A;
+
+  background:#111;
+}
+
+.gallery-item img{
+
+  width:100%;
+
+  height:100%;
+
+  object-fit:cover;
+
+  transition:1s;
+}
+
+.gallery-item:hover img{
+
+  transform:scale(1.08);
+}
+
+.gallery-item span{
+
+  position:fixed;
+
+  left:0;
+  right:0;
+  bottom:0;
+
+  padding:18px;
+
+  background:
+  linear-gradient(
+    transparent,
+    rgba(0,0,0,.95)
+  );
+
+  color:#D4A017;
+
+  font-weight:bold;
+
+  font-size:20px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+  .landing-title{
+
+    font-size:52px;
+  }
+
+  .landing-sub{
+
+    font-size:18px;
+  }
+
+  .landing-gallery{
+
+    grid-template-columns:1fr;
+  }
+}
+/* =====================================
+MODERN TOPBAR
+===================================== */
+
+#header{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+
+  height:74px;
+
+  z-index:9999;
+
+  padding:14px 24px;
+
+  background:#2A1505;
+
+  border-bottom:2px solid #D4A017;
+
+  box-shadow:
+  0 2px 18px rgba(0,0,0,.45);
+
+  display:flex;
+  align-items:center;
+}
+
+.topbar{
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:30px;
+}
+
+.brand-title{
+
+  color:#E6C27A;
+
+  font-size:42px;
+
+  font-weight:700;
+}
+
+.brand-sub{
+
+  color:#7F6A3D;
+
+  letter-spacing:4px;
+
+  font-size:12px;
+
+  margin-top:6px;
+}
+
+.top-menu{
+
+  display:flex;
+
+  gap:12px;
+}
+
+.top-filter{
+
+  background:
+  rgba(0,0,0,.35);
+
+  border:
+  1px solid rgba(212,160,23,.18);
+
+  color:#BFA06A;
+
+  padding:12px 24px;
+
+  border-radius:999px;
+
+  cursor:pointer;
+
+  transition:.3s;
+}
+
+.top-filter.active{
+
+  background:#D4A65A;
+
+  color:black;
+
+  font-weight:bold;
+}
+
+.heritage-count{
+
+  background:#D4A65A;
+
+  color:black;
+
+  padding:12px 22px;
+
+  border-radius:999px;
+
+  font-weight:bold;
+}
+/* =====================================
+   SIDEBAR TOGGLE
+   ===================================== */
+#toggle-sidebar {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(212, 160, 23, 0.12);
+  color: var(--emas);
+  cursor: pointer;
+  font-size: 20px;
+  z-index: 1001;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#toggle-sidebar:hover {
+  background: var(--emas);
+  color: var(--hitam);
+}
+
+/* SIDEBAR CLOSED STATE */
+#sidebar.closed {
+  width: 72px;
+  background: #140902;
+  border: none;
+  box-shadow: none;
+}
+
+#sidebar.closed #toggle-sidebar {
+  top: 50%;
+  left: 50%;
+  right: auto;
+  transform: translate(-50%, -50%);
+}
+
+#sidebar.closed #sidebar-content {
+  opacity: 0;
+  pointer-events: none;
+  display: none;
+}
+#cesium-story{
+  position:fixed;
+  inset:0;
+
+  width:100%;
+  height:100%;
+
+  border:none;
+
+  display:block;
+}
+/* HIDE CESIUM UI */
+
+.cesium-viewer-toolbar,
+.cesium-viewer-animationContainer,
+.cesium-viewer-timelineContainer,
+.cesium-viewer-bottom,
+.cesium-viewer-navigationContainer,
+.cesium-credit-logoContainer,
+.cesium-widget-credits,
+.cesium-viewer-fullscreenContainer{
+  display:none !important;
+}
+
+.slide-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:10;
+
+  width:32px;
+  height:32px;
+
+  border:none;
+  border-radius:50%;
+
+  background:rgba(0,0,0,.6);
+  color:white;
+
+  cursor:pointer;
+}
+
+.slide-btn.prev{
+  left:8px;
+}
+
+.slide-btn.next{
+  right:8px;
+}

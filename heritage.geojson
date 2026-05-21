@@ -1,0 +1,294 @@
+{
+  "type": "FeatureCollection",
+  "name": "Heritage Yogyakarta",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 1,
+        "name": "Keraton Ngayogyakarta Hadiningrat",
+        "kategori": "Peninggalan Keraton",
+        "kategori_id": "keraton",
+        "deskripsi": "Istana resmi Kesultanan Yogyakarta, dibangun sekitar tahun 1755 oleh Sri Sultan Hamengkubuwono I. Kompleks keraton ini merupakan pusat kebudayaan Jawa dan masih dihuni oleh keluarga sultan.",
+        "tahun_berdiri": "1755",
+        "status": "Aktif - Dihuni",
+        "luas": "14.000 m²",
+        "gambar": "images/keraton/keraton_ngayogyakarta.jpg",
+        "icon": "🏯"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [110.36438532759124, -7.805328610939731]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2,
+        "name": "Tugu Yogyakarta",
+        "kategori": "Peninggalan Keraton",
+        "kategori_id": "keraton",
+        "deskripsi": "Monumen ikonik Kota Yogyakarta yang dibangun pada era Hamengkubuwono I. Tugu ini merupakan titik 0 km Yogyakarta dan simbol filosofi Manunggaling Kawulo Gusti.",
+        "tahun_berdiri": "1755",
+        "status": "Cagar Budaya",
+        "luas": "-",
+        "gambar": "images/keraton/tugu_yogyakarta.jpg",
+        "icon": "🗼"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [110.36707863218079, -7.7829065601111385]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3,
+        "name": "Taman Sari",
+        "kategori": "Peninggalan Keraton",
+        "kategori_id": "keraton",
+        "deskripsi": "Kompleks taman air kerajaan yang dibangun pada abad ke-18 sebagai tempat rekreasi dan pertahanan Sultan. Dikenal dengan kolam pemandian yang indah dan lorong bawah tanah.",
+        "tahun_berdiri": "1758",
+        "status": "Situs Warisan Budaya",
+        "luas": "10 hektar",
+        "gambar": [
+          "images/keraton/taman_sari.png",
+          "images/keraton/taman_sari_2.png"
+        ],
+        "icon": "🌿"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [110.35902798558372, -7.809939970200659]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 4,
+        "name": "Pura Pakualaman",
+        "kategori": "Peninggalan Keraton",
+        "kategori_id": "keraton",
+        "deskripsi": "Istana resmi Kadipaten Pakualaman, kediaman Sri Paku Alam. Dibangun pada awal abad ke-19 dengan arsitektur perpaduan Jawa dan Eropa yang khas.",
+        "tahun_berdiri": "1813",
+        "status": "Aktif - Dihuni",
+        "luas": "±5 hektar",
+        "gambar": "images/keraton/pura_pakualaman.jpg",
+        "icon": "🏛️"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [110.37614290666693, -7.800770464698671]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 5,
+        "name": "Benteng Vredeburg",
+        "kategori": "Peninggalan Kolonial",
+        "kategori_id": "kolonial",
+        "deskripsi": "Benteng peninggalan Belanda yang dibangun pada tahun 1760. Kini berfungsi sebagai museum perjuangan kemerdekaan Indonesia dengan diorama sejarah yang lengkap.",
+        "tahun_berdiri": "1760",
+        "status": "Museum Aktif",
+        "luas": "±56.000 m²",
+        "gambar": "images/kolonial/benteng_vredeburg.jpg",
+        "icon": "⚔️"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [110.36536891447322, -7.800367031242193]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 6,
+        "name": "Gedung Agung (Istana Kepresidenan)",
+        "kategori": "Peninggalan Kolonial",
+        "kategori_id": "kolonial",
+        "deskripsi": "Istana kepresidenan di Yogyakarta yang dibangun Belanda pada tahun 1824. Menjadi tempat penting dalam sejarah kemerdekaan Indonesia, termasuk saat Yogyakarta menjadi ibukota.",
+        "tahun_berdiri": "1824",
+        "status": "Istana Aktif",
+        "luas": "±8.000 m²",
+        "gambar": "images/kolonial/gedung_agung.jpg",
+        "icon": "🏛️"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [110.36389020739787, -7.800182598312581]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 7,
+        "name": "Kantor Pos Besar Yogyakarta",
+        "kategori": "Peninggalan Kolonial",
+        "kategori_id": "kolonial",
+        "deskripsi": "Gedung kantor pos peninggalan era kolonial Belanda dengan arsitektur art deco yang masih beroperasi hingga kini. Salah satu bangunan bersejarah di kawasan Malioboro.",
+        "tahun_berdiri": "1910",
+        "status": "Operasional",
+        "luas": "-",
+        "gambar": "images/kolonial/kantor_pos.jpg",
+        "icon": "📮"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [110.3661162103153, -7.801829854246738]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 8,
+        "name": "Hotel Garuda (Grand Inna Malioboro)",
+        "kategori": "Peninggalan Kolonial",
+        "kategori_id": "kolonial",
+        "deskripsi": "Hotel bersejarah yang berdiri sejak zaman Belanda dan menjadi salah satu hotel tertua di Yogyakarta. Berlokasi strategis di sepanjang Jalan Malioboro yang ikonik.",
+        "tahun_berdiri": "1908",
+        "status": "Hotel Aktif",
+        "luas": "-",
+        "gambar": "images/kolonial/hotel_garuda.jpg",
+        "icon": "🏨"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [110.36699142034075, -7.790676638061329]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 9,
+        "name": "Plengkung Gadhing / Nirbaya",
+        "kategori": "Keraton Dan Pelestarian",
+        "kategori_id": "pelestarian",
+        "deskripsi": "Gerbang selatan Keraton Yogyakarta yang merupakan bagian dari tembok benteng keraton. Plengkung ini memiliki makna filosofis sebagai batas wilayah sakral keraton.",
+        "tahun_berdiri": "~1755",
+        "status": "Cagar Budaya",
+        "luas": "-",
+        "gambar": "images/pelestarian/plengkung_gadhing.jpg",
+        "icon": "🚪"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [110.36295842304973, -7.813667872334187]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 10,
+        "name": "Plengkung Wijilan",
+        "kategori": "Keraton Dan Pelestarian",
+        "kategori_id": "pelestarian",
+        "deskripsi": "Salah satu dari lima gerbang benteng Keraton Yogyakarta. Kawasan Wijilan di sekitarnya kini terkenal sebagai pusat kuliner Gudeg Yogyakarta.",
+        "tahun_berdiri": "~1755",
+        "status": "Cagar Budaya",
+        "luas": "-",
+        "gambar": "images/pelestarian/plengkung_wijilan.jpg",
+        "icon": "🚪"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [110.36665307017162, -7.803306549555568]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 11,
+        "name": "Plengkung Jagabaya",
+        "kategori": "Keraton Dan Pelestarian",
+        "kategori_id": "pelestarian",
+        "deskripsi": "Gerbang barat Keraton Yogyakarta, merupakan bagian dari sistem pertahanan benteng keraton. Plengkung ini memberi akses ke arah barat kompleks keraton.",
+        "tahun_berdiri": "~1755",
+        "status": "Cagar Budaya",
+        "luas": "-",
+        "gambar": "images/pelestarian/plengkung_jagabaya.jpg",
+        "icon": "🚪"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [110.35623810854963, -7.8085512211620385]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 12,
+        "name": "Masjid Gedhe Kauman",
+        "kategori": "Religi",
+        "kategori_id": "religi",
+        "deskripsi": "Masjid Agung Kasultanan Yogyakarta yang didirikan bersama dengan berdirinya Keraton Yogyakarta. Merupakan masjid kerajaan dan pusat kegiatan keagamaan keraton hingga saat ini.",
+        "tahun_berdiri": "1773",
+        "status": "Aktif - Masjid Bersejarah",
+        "luas": "±13.000 m²",
+        "gambar": "images/religi/masjid_gedhe_kauman.jpg",
+        "icon": "🕌"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [110.36244383739069, -7.803752043191297]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 13,
+        "name": "Makam Raja (Imogiri)",
+        "kategori": "Religi",
+        "kategori_id": "religi",
+        "deskripsi": "Kompleks pemakaman para raja Mataram Islam yang terletak di Imogiri. Dibangun oleh Sultan Agung pada abad ke-17 dan menjadi tempat peristirahatan terakhir raja-raja Mataram, Yogyakarta, dan Surakarta.",
+        "tahun_berdiri": "1640",
+        "status": "Situs Ziarah",
+        "luas": "±10 hektar",
+        "gambar": "images/religi/makam_raja.jpg",
+        "icon": "⛪"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [110.39502742219346, -7.918712146614004]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 14,
+        "name": "Museum Sonobudoyo",
+        "kategori": "Modern",
+        "kategori_id": "modern",
+        "deskripsi": "Museum kebudayaan Jawa yang didirikan pada tahun 1935, menyimpan koleksi artefak budaya Jawa, Bali, dan Lombok. Menjadi salah satu museum terpenting di Indonesia untuk pelestarian budaya.",
+        "tahun_berdiri": "1935",
+        "status": "Museum Aktif",
+        "luas": "±7.000 m²",
+        "gambar": "images/modern/museum_sonobudoyo.jpg",
+        "icon": "🏛️"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [110.36407, -7.80145]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 15,
+        "name": "Pasar Beringharjo",
+        "kategori": "Modern",
+        "kategori_id": "modern",
+        "deskripsi": "Pasar tradisional terbesar dan tertua di Yogyakarta yang telah berdiri sejak zaman Keraton. Menjadi pusat perdagangan batik, kerajinan tangan, dan produk lokal Yogyakarta.",
+        "tahun_berdiri": "1758",
+        "status": "Pasar Aktif",
+        "luas": "±8.000 m²",
+        "gambar": "images/modern/pasar_beringharjo.jpg",
+        "icon": "🏪"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [110.36845057744036, -7.798969525303508]
+      }
+    }
+  ]
+}

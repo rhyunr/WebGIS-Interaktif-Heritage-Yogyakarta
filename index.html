@@ -1,0 +1,204 @@
+  <!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>WebGIS Heritage Yogyakarta</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+  <!-- Cesium CSS -->
+  <link
+  href="https://cesium.com/downloads/cesiumjs/releases/1.114/Build/Cesium/Widgets/widgets.css"
+  rel="stylesheet">
+
+  <!-- APP CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+  <!-- ====== LOADING SCREEN ====== -->
+  <div id="loading-overlay">
+    <div class="loading-logo">🏯</div>
+    <div class="loading-title">Heritage Yogyakarta</div>
+    <div class="loading-subtitle">WebGIS · Cagar Budaya</div>
+    <div class="loading-bar">
+      <div class="loading-progress"></div>
+    </div>
+  </div>
+
+  <!-- ====== HEADER ====== -->
+  <div id="header">
+    <div class="logo-area">
+      <div class="logo-icon">🏯</div>
+      <h1>Heritage Yogyakarta <span>WEBGIS HERITAGE INTERAKTIF</span></h1>
+    </div>
+
+    <div class="header-nav">
+      <button class="btn-mode active" id="btn-2d" onclick="toggleMode('2d')">🗺️ 2D</button>
+      <button class="btn-mode" id="btn-3d" onclick="toggleMode('3d')">🌍 3D</button>
+    </div>
+  </div>
+
+  <!-- ====== MAIN CONTAINER ====== -->
+  <div id="main-container">
+    
+    <!-- ====== SIDEBAR ====== -->
+    <div id="sidebar">
+      <button id="toggle-sidebar">☰</button>
+      
+      <div id="sidebar-content">
+        <div id="sidebar-header">
+          <h2>📍 Bangunan Heritage Yogyakarta</h2>
+        </div>
+
+        <!-- Tab Bar -->
+        <div class="tab-bar">
+          <button class="tab-btn active" data-tab="daftar" onclick="switchTab('daftar')">📋 Daftar</button>
+          <button class="tab-btn" data-tab="rute" onclick="switchTab('rute')">🛤️ Rute</button>
+          <button class="tab-btn" data-tab="info" onclick="switchTab('info')">ℹ️ Detail</button>
+        </div>
+
+        <!-- ---- TAB: DAFTAR ---- -->
+        <div class="tab-panel active" id="panel-daftar">
+          <!-- Filter Kategori -->
+          <div id="filter-bar">
+            <button class="filter-btn active" data-kat="semua" onclick="filterByKategori('semua')">Semua</button>
+            <button class="filter-btn" data-kat="keraton" onclick="filterByKategori('keraton')" style="border-color:#D4A017">Keraton</button>
+            <button class="filter-btn" data-kat="kolonial" onclick="filterByKategori('kolonial')" style="border-color:#C0C0C0">Kolonial</button>
+            <button class="filter-btn" data-kat="pelestarian" onclick="filterByKategori('pelestarian')" style="border-color:#A0522D">Pelestarian</button>
+            <button class="filter-btn" data-kat="religi" onclick="filterByKategori('religi')" style="border-color:#2E8B57">Religi</button>
+            <button class="filter-btn" data-kat="modern" onclick="filterByKategori('modern')" style="border-color:#4169E1">Modern</button>
+          </div>
+
+          <!-- Daftar Bangunan -->
+          <div id="building-list">
+            <!-- Diisi oleh JS -->
+          </div>
+        </div>
+
+        <!-- ---- TAB: RUTE ---- -->
+        <div class="tab-panel" id="panel-rute">
+          <div id="route-panel">
+            <div class="route-section">
+              <label>🚩 Titik Awal</label>
+              <select id="route-from">
+                <option value="">-- Pilih Lokasi Awal --</option>
+              </select>
+            </div>
+
+            <div class="route-section">
+              <label>🏁 Tujuan</label>
+              <select id="route-to">
+                <option value="">-- Pilih Lokasi Tujuan --</option>
+              </select>
+            </div>
+
+            <button class="btn-route" onclick="calculateRoute()">📐 Hitung Rute Terdekat</button>
+            <button class="btn-route secondary" onclick="clearRoute()">🗑️ Hapus Rute</button>
+
+            <div style="margin-top: 12px; margin-bottom: 8px; font-size: 11px; color: #6B5B4E; text-transform: uppercase; letter-spacing: 1px;">Hasil</div>
+            <div id="route-result" style="color: #6B5B4E; font-size: 12px; padding: 10px; background: #1E140A; border: 1px solid #2A1505;">
+              Pilih titik awal dan tujuan, lalu klik hitung rute.
+            </div>
+
+            <div style="margin-top: 16px; padding: 10px; background: #1E140A; border: 1px solid rgba(92,51,23,0.4); font-size: 11px; color: #6B5B4E; line-height: 1.7;">
+              <div style="color: #C8894A; margin-bottom: 5px; font-weight: bold;">ℹ️ Catatan</div>
+              Rute yang ditampilkan adalah garis lurus (jarak udara) antar dua titik heritage.
+            </div>
+          </div>
+        </div>
+
+        <!-- ---- TAB: INFO ---- -->
+        <div class="tab-panel" id="panel-info">
+          <div id="info-panel">
+            <div class="info-placeholder">
+              <span>🏛️</span>
+              Klik salah satu bangunan<br>pada peta atau daftar<br>untuk melihat detail informasi.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== MAP CONTAINER 2D ====== -->
+    <div id="map-container">
+      <div id="map"></div>
+
+      <!-- Legend -->
+      <div id="legend">
+        <h4>Legenda</h4>
+        <div class="legend-item">
+          <div class="legend-dot" style="background:#D4A017"></div>
+          Peninggalan Keraton
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot" style="background:#C0C0C0"></div>
+          Peninggalan Kolonial
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot" style="background:#A0522D"></div>
+          Keraton & Pelestarian
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot" style="background:#2E8B57"></div>
+          Religi
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot" style="background:#4169E1"></div>
+          Modern
+        </div>
+      </div>
+
+      <!-- Map Controls -->
+      <div id="map-controls">
+        <button class="map-ctrl-btn" onclick="zoomIn()" title="Zoom In">+</button>
+        <button class="map-ctrl-btn" onclick="zoomOut()" title="Zoom Out">−</button>
+        <button class="map-ctrl-btn" onclick="resetView()" title="Reset View" style="font-size:14px">⌂</button>
+      </div>
+    </div>
+
+    <!-- ====== CESIUM CONTAINER 3D ====== -->
+    <div id="cesium-container" style="display: none;">
+      <div id="cesiumViewer"></div>
+      <iframe id="cesium-story" src="https://ion.cesium.com/stories/viewer/?id=78f5be16-bbd0-46b2-be6d-783aa09851e1" style="width:100%; height:100%; border:none;"></iframe>
+    </div>
+
+  </div>
+  <!-- /MAIN CONTAINER -->
+
+  <!-- ====== STATUS BAR ====== -->
+  <div id="statusbar">
+    <div class="status-item">
+      <span class="dot"></span>
+      <span>WebGIS Heritage Yogyakarta</span>
+    </div>
+    <div class="status-item">
+      <span id="status-count">– Situs</span>
+    </div>
+    <div class="status-item">
+      <span id="status-zoom">Zoom: –</span>
+    </div>
+    <div class="status-item">
+      <span>Sumber: Data Keraton & Pemkot Yogyakarta</span>
+    </div>
+  </div>
+
+  <!-- ====== SCRIPTS ====== -->
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <!-- Cesium JS (dimuat tapi hanya aktif saat mode 3D diklik) -->
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.114/Build/Cesium/Cesium.js"></script>
+
+  <!-- App JS -->
+  <script src="js/app.js"></script>
+
+</body>
+</html>
